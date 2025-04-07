@@ -38,6 +38,7 @@ export default defineConfig({
 		rollupOptions: {
 			input: {
 				index: 'index.html',
+				indexSwiper: '/src/js/swiper-bundle.min.js',
 			},
 	
 		},
