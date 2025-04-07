@@ -1,0 +1,114 @@
+@use './main/constant' as *;
+@use './main/fonts' as *;
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: auto;
+    padding: 24px 130px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    background-color: $color-background-secondary;
+
+    /* .header__logo */
+
+    &__logo {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items:center;
+        width: 100%;
+        min-width: 181px;
+        max-width: 210px;
+        height: 33px;
+    }
+    &__img-logo{
+        display: block;
+        width: 100%;
+        height: 100%;
+
+      
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        
+        transition: all 0.2s;
+    }
+
+    /* .header__navigation */
+
+    &__navigation {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 42px;
+        row-gap: 0px;
+        margin-inline: 10px;
+    }
+
+    /* .header__navigation-item */
+
+    &__navigation-item {
+        display: block;
+        text-decoration: none;
+        color: $color-text-primary;
+        flex-wrap: nowrap;
+        text-wrap: nowrap;
+        transition: all 0.2s;
+        &:hover{
+            color: $color-text-accent;
+        }
+    }
+
+    /* .header__utility */
+
+    &__utility {
+        display: flex;
+        align-items: center;
+    }
+
+    /* .header__search */
+
+    &__search {
+ 
+        padding: 13px;
+        margin-right: 36px;
+    }
+
+    /* .header__callback */
+
+    &__callback {
+        font-size: 14px;
+        margin-right: 15px;
+    }
+
+    /* .header__account */
+
+    &__account {
+        font-size: 14px;
+    }
+
+    /* .header__language */
+
+    &__language {
+        padding: 0;
+        margin-left: 36px;
+    }
+
+    /* .header__button-menu */
+
+    &__button-menu {
+        opacity: 0;
+        position: absolute;
+    }
+
+    /* .header__label-menu */
+
+    &__label-menu {
+    }
+}
