@@ -27,8 +27,7 @@ export default defineConfig({
 	},
 	root: './',
 	build: {
-				 outDir: 'docs',
-				 emptyOutDir: true,
+
 		// lib: {
 		// 	entry: resolve(__dirname, 'lib/main.js'),
 		// 	name: 'MyLib',
