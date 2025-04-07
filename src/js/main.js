@@ -45,8 +45,6 @@ let popupOpenTl, popupCloseTl;
 
 let dragged = false;
 
-
-
 function initScene() {
     renderer = new THREE.WebGLRenderer({canvas: canvas3D, alpha: true});
 	renderer.setPixelRatio(2);
