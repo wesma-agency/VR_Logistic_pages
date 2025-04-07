@@ -27,12 +27,22 @@ export default defineConfig({
 	},
 	root: './',
 	build: {
-		rollupOptions: {
-			input: {
-				index: 'index.html',
-			},
-		},
-		// Не обязательные опции
+		// lib: {
+		// 	entry: resolve(__dirname, 'lib/main.js'),
+		// 	name: 'MyLib',
+		// 	// the proper extensions will be added
+		// 	fileName: 'my-lib',
+		// },
+
+		// rollupOptions: {
+		// 	input: {
+		// 		index: 'index.html',
+		// 	},
+		// 	output: {
+				
+		// 	},
+		// },
+		// // Не обязательные опции
 		minify: false,
 	},
 	resolve: {
