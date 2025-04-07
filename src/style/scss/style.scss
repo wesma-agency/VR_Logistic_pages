@@ -531,6 +531,59 @@ a.link{
     display: block;
     
 }
+
+.swiper-slide{
+    margin-top: 20px !important;
+}
+.swiper-pagination{
+    position: relative;
+    &.feedback-swiper-pagination{
+        margin-top: 42px;
+    }
+
+    .swiper-pagination-bullet{
+        height: 15px;
+        width: 15px;
+        background-color: $color-background-green-light;
+        &.swiper-pagination-bullet-active{
+            background-color: $color-background-minimal;
+        }
+
+    }
+}
+
+.text--white{
+    color: $color-text-invert;
+}
+
+.input-form{
+    &__with-button{
+        position: relative;
+        border: 2px solid $color-background-line;
+        border-radius: 15px; 
+        padding: 23px 198px 23px 30px;   
+        button.button{
+            position: absolute;
+            top: 7px;
+            right: 7px;
+            max-width: 198px;
+            padding: 15px 35px;
+            border-radius: 15px;
+        }
+        input{
+            border: none;
+            font-size: 18px;
+            &::placeholder{
+                color: $color-background-green-light;
+            }
+            &:focus-visible{
+                outline: none;
+            }
+        }
+    }
+}
+
+
 @import url(./lib/swiper-bundle.css);
 
 @import url(./_header.scss);

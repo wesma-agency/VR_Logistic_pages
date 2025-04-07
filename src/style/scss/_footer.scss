@@ -13,6 +13,7 @@
         flex-direction: column;
         width: max-content;
         max-width: 33%;
+        color: $color-text-invert;
     }
 
     // .footer__logo
@@ -161,6 +162,7 @@
         margin-bottom: 60px;
         >span{
             display: block;
+            
         }
     }
 

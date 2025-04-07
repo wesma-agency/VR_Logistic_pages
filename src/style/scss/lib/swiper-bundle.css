@@ -611,8 +611,8 @@ button.swiper-pagination-bullet {
   flex-wrap: wrap;
 }
 .swiper-grid-column > .swiper-wrapper {
-  flex-wrap: wrap;
-  flex-direction: column;
+  /* flex-wrap: wrap; */
+  /* flex-direction: column; */
 }
 .swiper-fade.swiper-free-mode .swiper-slide {
   transition-timing-function: ease-out;

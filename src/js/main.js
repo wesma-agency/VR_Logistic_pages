@@ -4,7 +4,7 @@ import { CountUp } from './count-up';
 import { createWaypoint } from './waypoints';
 // import { createWaypoint } from './three.min.js';
 
-import Swiper from 'swiper/bundle';
+// import Swiper from 'swiper/bundle';
 import '../style/scss/style.scss';
 import './simplebar';
 import './map';
