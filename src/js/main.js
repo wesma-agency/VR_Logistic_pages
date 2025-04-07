@@ -333,11 +333,6 @@ function drawPopupConnector(startX, startY, midX, midY, endX, endY) {
     overlayCtx.stroke();
 }
 
-
-
-
-
-
 function openMenu(ui_menu, ui_close, ui_body){
     ui_menu.classList.add("active-menu");
     ui_body.classList.add("active-bloor")
@@ -394,3 +389,75 @@ document.addEventListener('DOMContentLoaded', () => {
         triggerOnce: true // сработает только один раз
     });
 });
+const newsSwiper = new Swiper('.news-swiper', {
+    slidesPerView: 1,
+    spaceBetween: 10,
+
+    pagination: {
+        el: '.news-swiper-pagination',
+        type: 'bullets',
+        clickable: true,
+    },
+    breakpoints: {
+        540: {
+        slidesPerView: 1.3,
+        spaceBetween: 20,
+        },
+        768: {
+        slidesPerView: 3,
+        spaceBetween: 20,
+        },
+        900: {
+        slidesPerView: 2,
+        spaceBetween: 20,
+        },
+        1280: {
+        slidesPerView: 2,
+        spaceBetween: 20,
+        },
+        1440: {
+        slidesPerView: 2.5,
+        spaceBetween: 20,
+        }
+
+    }
+})
+
+
+const feedbackSwiper = new Swiper('.feedback-swiper', {
+    slidesPerView: 1,
+    spaceBetween: 10,
+
+    pagination: {
+        el: '.feedback-swiper-pagination',
+        type: 'bullets',
+        clickable: true,
+    },
+    breakpoints: {
+        540: {
+        slidesPerView: 1.3,
+        spaceBetween: 20,
+        },
+        768: {
+        slidesPerView: 3,
+        spaceBetween: 20,
+        },
+        900: {
+        slidesPerView: 2,
+        spaceBetween: 20,
+        },
+        1280: {
+        slidesPerView: 4,
+        spaceBetween: 20,
+        },
+        1440: {
+            // slidesPerColumn: 2,
+        slidesPerView: 2,
+        spaceBetween: 20,
+        grid:{
+                rows:2,
+                // column: 2,
+            },
+        },
+    }
+})
