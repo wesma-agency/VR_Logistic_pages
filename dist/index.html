@@ -8,11 +8,11 @@
 				
 		<script type="text/javascript" src="./pgs-panel/js/jquery.min.js"></script>
 		<script type="text/javascript" src="./pgs-panel/js/jquery.mCustomScrollbar.concat.min.js"></script>
-		<script  type="text/javascript" src="./pgs-panel/js/main.js"></script>
+		<script type="text/javascript"  src="./src/js/swiper-bundle.min.js"></script>
+		<script type="text/javascript" src="./pgs-panel/js/main.js"></script>
 
-
-		<script type="module" crossorigin src="./assets/index-DX0IzxPF.js"></script>
-		<link rel="stylesheet" crossorigin href="./assets/index-CbdJB46W.css">
+		<script type="module" crossorigin src="./assets/index-Bp9Cw8TL.js"></script>
+		<link rel="stylesheet" crossorigin href="./assets/index-BgyVRBgy.css">
 	</head>
 	<body>
 		<!-- Пример подключения html-блоков -->
@@ -59,6 +59,13 @@
         </a>
     </div>
 
+    <input id="menu-mobile" type="checkbox" class="header__button-menu">
+    <label class="header__label-button-menu" for="menu-mobile">
+        <span></span>
+        <span></span>
+        <span></span>
+    </label>
+
     <div class="header__navigation"> 
         <a class="header__navigation-item text--bold text--xs" href="">О компании</a>
         <a class="header__navigation-item text--bold text--xs" href="">Услуги</a>
@@ -74,11 +81,7 @@
         <button class="button header__callback button--padding__min">Обратная связь</button>
         <button class="button header__account button--outline button--padding__min">Личный кабинет</button>
         <button class="button--icon header__language">EN</button>
-        <input id="toggle" type="checkbox" class="header__button-menu">
-        <label class="header__label-menu" for="toggle">
-            <span class="header__label-menu">
-            </span>
-        </label>
+        
     </div>
 
 </header>
@@ -95,6 +98,11 @@
     <section class="banner">
         <div class="banner__background">
             <div class="js-globus"></div>
+            <div class="banner__video">
+                <video autoplay loop muted>
+                    <source src="./assets/VR_2-IANQL2KE.webm" type="video/webm">
+                </video>
+            </div>
         </div>
 
         <div class="wrapper padding">
@@ -142,7 +150,11 @@
     </section>
 
     <section class="video" id="section-video">
-        <div class="video__background"></div>
+        <div class="video__background">
+            <video src="" loop >
+                <source src="">
+            </video>
+        </div>
         <div class="wrapper padding">
             <div class="video__container">
                 <h3>Cоздавая преимущества</h3>
@@ -392,16 +404,24 @@
         </div>
     </div>
 </section>
-    <section class="routes js-tab">
+    <section class="routes js-tab-select">
     <div class="wrapper padding " >
         <div class="section-title">
             <span class="section-title__name">
                 <h2>Основные маршруты и направления</h2>
             </span>
-        </div >
-     
-
-        <div class="routes__container ">
+        </div >   
+        <div class="routes__container js-tab-select-container">
+            <div class="js-tab-select__button">
+                <div class="tab-wrapper">
+                    <div class="tab-icon">
+                        <img src="./assets/1-BsIOk52W.svg" alt="">
+                    </div>  
+                    <span class="routes__tab-name tab-name text--medium text--s">
+                        Сборные грузы
+                    </span>
+                </div>      
+            </div>
             <div class="routes__tabs tabs js-tabs">
                 <label data-tab-list="1" class="routes__tab tab js-tab">
                     <input type="radio" class="routes__tab" name="routes" checked>
@@ -412,8 +432,7 @@
                         <span class="routes__tab-name tab-name text--medium text--s">
                             Сборные грузы
                         </span>
-                    </div>
-                    
+                    </div>               
                 </label>
 
                 <label data-tab-list="2" class="routes__tab tab js-tab">
@@ -593,6 +612,45 @@
     </div>
     
 </section>
+
+
+<script>
+    if(window.outerWidth < 1280){
+        const standartSwiper = new Swiper('.swiper-document', {
+            slidesPerView: 1.05,
+            spaceBetween: 10,
+        
+            pagination: {
+                el: '.standart-swiper-pagination',
+                type: 'bullets',
+                clickable: true,
+            },
+            breakpoints: {
+                540: {
+                slidesPerView: 1.5,
+                spaceBetween: 20,
+                },
+                768: {
+                slidesPerView: 3,
+                spaceBetween: 20,
+                },
+                1024: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+                },
+                1280: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+                },
+                1440: {
+                slidesPerView: 2.5,
+                spaceBetween: 20,
+                }
+        
+            }
+        });
+    }
+</script>
     <section class="feedback">
     <div class="wrapper padding" >
         <div class="section-title">
@@ -795,7 +853,46 @@
     
 </section>
 <script>
+const feedbackSwiper = new Swiper('.feedback-swiper', {
+    slidesPerView: 1.1,
+    spaceBetween: 20,
 
+    pagination: {
+        el: '.feedback-swiper-pagination',
+        type: 'bullets',
+        clickable: true,
+    },
+    breakpoints: {
+
+        540: {
+            slidesPerView: 1.8,
+            spaceBetween: 20,
+        },
+
+        768: {
+            slidesPerView: 1,
+            spaceBetween: 20,
+        },
+
+        900: {
+            slidesPerView: 1,
+            spaceBetween: 20,
+        },
+        1280: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+        },
+        1440: {
+            // slidesPerColumn: 2,
+            slidesPerView: 2,
+            spaceBetween: 20,
+            grid:{
+                rows:2,
+                // column: 2,
+            },
+        },
+    }
+})
 </script>
     <section class="news">
     <div class="wrapper padding" >
@@ -807,7 +904,7 @@
                     <h2>Новости</h2>
                 </span>
             </div >
-            <div class="news__subscribe ">
+            <div class="news__subscribe">
                 <h4>Следите за нашими новостями, чтобы всегда быть на шаг впереди!</h4>
                 <form action="" class="news__subscribe-form">
                     <div class="input-form__with-button">
@@ -895,7 +992,39 @@
 </section>
 
 <script>
-   
+    const newsSwiper = new Swiper('.news-swiper', {
+        slidesPerView: 1.1,
+        spaceBetween: 10,
+    
+        pagination: {
+            el: '.news-swiper-pagination',
+            type: 'bullets',
+            clickable: true,
+        },
+        breakpoints: {
+            540: {
+            slidesPerView: 1.5,
+            spaceBetween: 20,
+            },
+            768: {
+            slidesPerView: 'auto',
+            spaceBetween: 20,
+            },
+            1280: {
+            slidesPerView: 1.5,
+            spaceBetween: 20,
+            },
+            1440: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+            },
+            1800: {
+            slidesPerView: 2.5,
+            spaceBetween: 20,
+            },
+    
+        }
+    });
 </script>
 
 </main>
@@ -1013,6 +1142,7 @@
         </div>
         <a href="" class="footer__privacy-policy text--m">Политика конфиденциальности</a>
     </div>
+    <div class="footer__copyright-bottom text--xxs text--white">Copyright © 2024 VR LOGISTIC</div>
     
 </footer>
 
@@ -1020,8 +1150,9 @@
 
 		</div>
 
-	</body>		
+	</body>
+
 
-	<script src="./src/js/swiper-bundle.min.js"></script>
+	<script  src="./src/js/globus.js"></script>
 
 </html>

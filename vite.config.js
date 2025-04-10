@@ -27,26 +27,12 @@ export default defineConfig({
 	},
 	root: './',
 	build: {
-
-		// lib: {
-		// 	entry: resolve(__dirname, 'lib/main.js'),
-		// 	name: 'MyLib',
-		// 	// the proper extensions will be added
-		// 	fileName: 'my-lib',
-		// },
-
 		rollupOptions: {
 			input: {
 				index: 'index.html',
-				indexSwiper: '/src/js/swiper-bundle.min.js',
 			},
-	
 		},
-			// output: {
-				
-		// 	},
-		// },
-		// // Не обязательные опции
+		// Не обязательные опции
 		minify: false,
 	},
 	resolve: {

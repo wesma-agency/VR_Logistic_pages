@@ -8,7 +8,7 @@
                     <h2>Новости</h2>
                 </span>
             </div >
-            <div class="news__subscribe ">
+            <div class="news__subscribe">
                 <h4>Следите за нашими новостями, чтобы всегда быть на шаг впереди!</h4>
                 <form action="" class="news__subscribe-form">
                     <load src="../components/inputWithButton.html" />
@@ -91,5 +91,37 @@
 </section>
 
 <script>
-   
+    const newsSwiper = new Swiper('.news-swiper', {
+        slidesPerView: 1.1,
+        spaceBetween: 10,
+    
+        pagination: {
+            el: '.news-swiper-pagination',
+            type: 'bullets',
+            clickable: true,
+        },
+        breakpoints: {
+            540: {
+            slidesPerView: 1.5,
+            spaceBetween: 20,
+            },
+            768: {
+            slidesPerView: 'auto',
+            spaceBetween: 20,
+            },
+            1280: {
+            slidesPerView: 1.5,
+            spaceBetween: 20,
+            },
+            1440: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+            },
+            1800: {
+            slidesPerView: 2.5,
+            spaceBetween: 20,
+            },
+    
+        }
+    });
 </script>

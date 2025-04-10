@@ -48,6 +48,8 @@ h4{
     font-weight: 600;
 }
 
+
+
 section{
     position: relative;
 }
@@ -114,6 +116,66 @@ section{
     }
 }
 
+
+
+
+@media(max-width: 540px){
+    h1{
+    }
+    
+    h2{ 
+    }
+    
+    h3{        
+    }
+    
+    h4{
+        font-size: 25px;
+    }
+    
+    
+    .text{
+        &--xxl{
+            font-size: 75px;
+            line-height: 100%;
+        }
+
+
+        &--l{
+            font-size: 20px;
+        }
+
+        &--m{
+            font-size: 22px;
+            line-height: 140%;
+        }
+
+        &--s{
+            font-size: 20px;
+            line-height: 120%;
+        }    
+
+        &--xs{
+            font-size: 18px;
+        }
+
+        &--xxs{
+            font-size: 16px;
+        }
+
+        &--xxxs{
+            font-size: 16px;
+        }
+
+    }
+        
+}
+
+
+
+
+
+
 .icon{
     display: block;
     mask-position: center;
@@ -157,7 +219,7 @@ section{
     background-color: $color-button-background-default;
     color: $color-button-text-invert;
     width: 100%;
-    max-width: max-content;
+    min-width: max-content;
     border: 2px solid $color-button-text-minimal;
     border-radius: 20px;
     transition: all 0.2s;
@@ -228,8 +290,8 @@ section{
         &::after{
             content:'';
             display: block;
-            height: 15px;
-            width: 15px;
+            height: 10px;
+            width: 10px;
             border-radius: 50px;
             background-color: transparent;
             border: 2px solid $color-button-text-minimal;
@@ -309,7 +371,7 @@ section{
   
     border-radius: 50px;
     height: 44px;
-    width: 44px;
+    min-width: 44px;
     transition: all 0.2s;
     &:hover{
         background-color:$color-icon-dark-green;
@@ -463,6 +525,7 @@ a.link{
     }
 }
 
+
 .tabs{
     display: flex;
 }
@@ -517,6 +580,131 @@ a.link{
 
 }
 
+.js-tab-select{
+    .js-tab-select__button{
+        display: none;
+    }
+}
+
+
+.js-tab-select.select{
+
+    .js-tab-select-container{
+        transition: all 0.2s;
+        max-width: 100%;
+        position: relative;
+    }
+    .js-tab-select__button{
+        transition: all 0.2s;
+        cursor: pointer;
+        position: relative;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        z-index: 2;
+
+        border-radius: 15px;
+        .tab-wrapper{
+            border-radius: 15px;
+            background-color: $color-background-green;
+            width: 100%;
+            span{
+                color: $color-text-invert;
+            }
+            
+        }     
+    
+        &::after{
+            position: absolute;
+            content: '';
+            mask-image: url(/src/assets/icons/all/select-arrow.svg);
+            mask-position: center;
+            mask-repeat: no-repeat;
+            mask-size: contain;
+            background: $color-icon-primary;
+            width: 17px;
+            height: 17px;
+            right: 26px;
+        }
+
+        &.active{
+            transition: all 0.2s;
+             &::after{
+                transition: all 0.2s;
+                transform: rotate(180deg);
+            }
+        }
+    }
+
+    .js-tab-select__button.active ~ .tabs{
+        height: auto;
+        transition: all 0.3s;
+        opacity: 1;
+    }
+    
+    .tabs{
+
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        border: 1px solid $color-background-green-light;
+        background-color: #F2F8F2B2;
+        color: $color-text-secondary;
+        padding-top: 60px;
+        border-radius: 20px;
+        top: 30px;
+        z-index: 1;
+        width: 100%;
+
+
+        height: 0px;
+        opacity: 0;
+        overflow: hidden;
+        transition: all 0.3s;
+
+    }
+    
+    .tab{
+
+
+        cursor: pointer;
+        display: flex;
+    
+        justify-content: center;
+        position: relative;
+        
+  
+        &:first-child>.tab-wrapper{
+            border-radius: 0;
+
+        }
+        &:last-child>.tab-wrapper{
+            border-radius: 0;
+        }
+
+    }
+
+    input:checked~div.tab-wrapper{
+        display: none;
+    }
+
+    input:checked~div.tab-wrapper>.tab-name{
+        background-color: $color-background-green;
+        color: $color-text-invert;
+    }
+
+
+    .tab-wrapper{
+        width: 100%;
+        border: none;
+        transition: all 0.2s;
+        &:hover{
+            background-color:$color-background-green-light;
+        }
+    }       
+}
+
+
 .tab-icon{
     height: 25px;
     width: 26px;
@@ -532,9 +720,7 @@ a.link{
     
 }
 
-.swiper-slide{
-    margin-top: 20px !important;
-}
+
 .swiper-pagination{
     position: relative;
     &.feedback-swiper-pagination{
@@ -561,7 +747,7 @@ a.link{
         position: relative;
         border: 2px solid $color-background-line;
         border-radius: 15px; 
-        padding: 23px 198px 23px 30px;   
+        padding: 23px 210px 23px 30px;   
         button.button{
             position: absolute;
             top: 7px;
@@ -583,6 +769,43 @@ a.link{
     }
 }
 
+@media(max-width: 540px){
+
+    .input-form{
+        &__with-button{
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            border: none;
+            padding: 0;   
+            button.button{
+                position: static;
+                max-width: 320px;
+                padding: 25px 35px;
+                border-radius: 15px;
+                background-color: $color-background-line;
+                border-color: $color-background-line ;
+                color: $color-text-secondary;
+                font-weight: 600;
+            }
+            input{
+                font-size: 20px;
+                border-radius: 15px; 
+                border: 2px solid $color-background-line;
+                padding: 25px 30px;
+                max-width: 320px;
+                &::placeholder{
+                    color: $color-background-green-light;
+                }
+                &:focus-visible{
+                    outline: none;
+                }
+            }
+        }
+    }
+}
 
 @import url(./lib/swiper-bundle.css);
 

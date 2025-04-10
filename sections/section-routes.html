@@ -1,13 +1,21 @@
-<section class="routes js-tab">
+<section class="routes js-tab-select">
     <div class="wrapper padding " >
         <div class="section-title">
             <span class="section-title__name">
                 <h2>Основные маршруты и направления</h2>
             </span>
-        </div >
-     
-
-        <div class="routes__container ">
+        </div >   
+        <div class="routes__container js-tab-select-container">
+            <div class="js-tab-select__button">
+                <div class="tab-wrapper">
+                    <div class="tab-icon">
+                        <img src="/src/assets/icons/routes/1.svg" alt="">
+                    </div>  
+                    <span class="routes__tab-name tab-name text--medium text--s">
+                        Сборные грузы
+                    </span>
+                </div>      
+            </div>
             <div class="routes__tabs tabs js-tabs">
                 <label data-tab-list="1" class="routes__tab tab js-tab">
                     <input type="radio" class="routes__tab" name="routes" checked>
@@ -18,8 +26,7 @@
                         <span class="routes__tab-name tab-name text--medium text--s">
                             Сборные грузы
                         </span>
-                    </div>
-                    
+                    </div>               
                 </label>
 
                 <label data-tab-list="2" class="routes__tab tab js-tab">
