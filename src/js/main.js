@@ -1,51 +1,55 @@
 'use strict';
 /* LIBRARIS */
 import { CountUp } from './count-up';
-import { createWaypoint } from './waypoints';
-// import { createWaypoint } from './three.min.js';
+import { createWaypoint } from './lib/waypoints';
+
 
 // import Swiper from 'swiper/bundle';
 import '../style/scss/style.scss';
-import './simplebar';
-import './map';
-import './form';
-import './imask';
-import './checkbox';
-import './textarea';
-import './dropdown';
-import './smooth-scroll';
-import './popup';
-import './auth';
-import './contacts';
-import './accordion';
-import './filters';
-import './select-menu';
-import './header';
-import './search-popup';
+
+//=== Скрипты на всякий случай ===//
+
+// import './simplebar';
+// import './map';
+// import './form';
+// import './imask';
+// import './checkbox';
+// import './textarea';
+// import './dropdown';
+// import './smooth-scroll';
+// import './popup';
+// import './auth';
+// import './accordion';
+// import './header';
+// import './search-popup';
 
 
 
-function openMenu(ui_menu, ui_close, ui_body){
-    ui_menu.classList.add("active-menu");
-    ui_body.classList.add("active-bloor")
-    ui_close.addEventListener("click", ()=>{
-        ui_menu.classList.remove("active-menu");
-        ui_body.classList.remove("active-bloor")
-    })
+// function openMenu(ui_menu, ui_close, ui_body){
+//     ui_menu.classList.add("active-menu");
+//     ui_body.classList.add("active-bloor")
+//     ui_close.addEventListener("click", ()=>{
+//         ui_menu.classList.remove("active-menu");
+//         ui_body.classList.remove("active-bloor")
+//     })
+// }
+
+// document.addEventListener('DOMContentLoaded', ()=>{
+//     const UI = {
+//         MENU: document.querySelector(".js-menu"),
+//         MENU_BUTTON: document.querySelector(".js-open-menu"),
+//         MENU_CLOSE: document.querySelector(".js-close-menu"),
+//         BODY: document.querySelector("body"),
+//     }
+//     UI.MENU_BUTTON.addEventListener('click', ()=>{ 
+//         openMenu(UI.MENU, UI.MENU_CLOSE, UI.BODY);
+//     })
+// })
+
     
-}
 
-document.addEventListener('DOMContentLoaded', ()=>{
-    const UI = {
-        MENU: document.querySelector(".js-menu"),
-        MENU_BUTTON: document.querySelector(".js-open-menu"),
-        MENU_CLOSE: document.querySelector(".js-close-menu"),
-        BODY: document.querySelector("body"),
-    }
-    UI.MENU_BUTTON.addEventListener('click', ()=>{ 
-        openMenu(UI.MENU, UI.MENU_CLOSE, UI.BODY);
-    })
-})
+// === СЧЕТЧИК НА ГЛАВНОЙ === //
+
 
 function countStart(dom = document){
     const $counters = dom.querySelectorAll(".js-count-up"),
@@ -62,8 +66,6 @@ function countStart(dom = document){
       counter.start();
     });
   }
-  
-
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -86,13 +88,10 @@ document.addEventListener('DOMContentLoaded', () => {
     tabSelects.forEach((tabSelect) =>{
        
         const button = tabSelect.querySelector('.js-tab-select__button');
-        // const container = tabSelect.querySelector('.js-tab-select-container');
-        // const tabsContainer = tabSelect.querySelector('.js-tabs');
         const tabs = tabSelect.querySelectorAll('.js-tab');
-
-        // const tabsListsContainer = tabSelect.querySelector('.js-tab-lists');
         const tabsLists = tabSelect.querySelectorAll('.js-tab-list');
-    //адапивим под select, если разрешение меньше указанного
+
+
         tabs.forEach((tab) => {
             tab.querySelector('input').addEventListener('change',(event) => {
                 const wrapper = tab.querySelector('.tab-wrapper');
@@ -109,6 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
             })
         })
        
+    //адапивим под select, если разрешение меньше указанного
 
         if(window.outerWidth < 900){
             tabSelect.classList.add('select');
@@ -116,8 +116,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 button.classList.toggle('active')
             })
         }
-
-    
     })
 
 })

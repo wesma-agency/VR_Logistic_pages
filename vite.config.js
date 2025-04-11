@@ -23,7 +23,7 @@ export default defineConfig({
 		},
 	},
 	server: {
-		// open: true,
+	
 	},
 	root: './',
 	build: {

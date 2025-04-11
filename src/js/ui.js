@@ -170,9 +170,6 @@ selectSingle.forEach(item => {
 })
 
 
-
-
-
 function changeSelectItem(option, items) {
     items.forEach(item => {
         item.classList.remove('active');

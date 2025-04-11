@@ -454,7 +454,7 @@
         .services__globe{
             // top: 0;
             // bottom: 0;
-            top: 25%;
+            top: 27%;
             left: 0;
             right: 0;
             margin-top: auto;
@@ -549,6 +549,7 @@
     }
 
     &__item {
+        overflow: hidden;
         display: flex;
         flex-direction: column;
         position: relative;
@@ -598,6 +599,7 @@
     &__arrow {
         display: flex;
         position: absolute;
+  
         width: 91px;
         height: 91px;
         padding: 11px;
@@ -607,7 +609,7 @@
         right: -11px;
         opacity: 0;
         transition: 0.2s;
-        transform: scale(0.2) translate(70px, -70px);
+        transform: translate(100px, -100px);
 
         &::before{
             position: relative;
@@ -1087,6 +1089,20 @@
 .news-swiper-pagination {
     margin-top: 82px;
 }
+
+@media(max-width: 1700px){
+    .services .services__globe{
+        top: 40%;  
+    }
+}
+
+@media(max-width: 1500px){
+    .services .services__globe{
+        top: 43%;  
+    }
+}
+
+
 
 @media(max-width: 1800px){
     .wrapper.padding{
@@ -1655,6 +1671,41 @@
             
         }
     }   
+
+
+    
+    .routes {
+        .wrapper{
+            padding-top: 65px;
+        }
+    
+    
+        &__maps {
+            position: relative;
+            top: 0px;
+            z-index: 0;
+            
+        }
+        &__map-list{
+            
+            height: 644px;
+            width: auto;
+            overflow: hidden;
+            .routes__map-container{
+           
+                display: flex;
+                justify-content: center;
+            }
+            img{
+                position: relative;
+                left: -200px;
+                width: auto;
+                height: 100%;
+            }
+        }
+    
+    }
+
 
     .services {
 
